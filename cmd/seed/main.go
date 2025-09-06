@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 )
 
@@ -12,37 +13,39 @@ func main() {
 
 func getTeamsFromAPI() {
 
-	liga_id := 140
-	season := 2023
+	liga_id := 2014
+	season := 2025
 
-	url := fmt.Sprintf("https://v3.football.api-sports.io/teams?league=%d&season=%d", liga_id, season)
-
+	url := fmt.Sprintf("http://api.football-data.org/v4/competitions/%d/teams?season=%d", liga_id, season)
 	getFromAPIurl(url)
 }
 
 func getFromAPIurl(url string) {
 
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", url, nil)
+
+	req, err := http.NewRequest(http.MethodGet, url, nil)
 
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal("Error getting a new request")
 		return
 	}
 
-	req.Header.Add("x-rapidapi-key", "7129b5848d724ed4b4a489523a27c0e7")
+	req.Header.Add("X-Auth-Token", "2ef5b7af58674f508a684607709b316f")
 
 	res, err := client.Do(req)
+
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal("Error getting a the response")
 		return
 	}
-	defer res.Body.Close()
 
 	body, err := io.ReadAll(res.Body)
+
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal("Error reading the body of the response")
 		return
 	}
-	fmt.Println(string(body))
+
+	fmt.Print(string(body))
 }
