@@ -1,8 +1,8 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"io"
 	"log"
 	"net/http"
 )
@@ -40,12 +40,14 @@ func getFromAPIurl(url string) {
 		return
 	}
 
-	body, err := io.ReadAll(res.Body)
+	var data map[string]interface{}
+
+	err = json.NewDecoder(res.Body).Decode(data)
 
 	if err != nil {
 		log.Fatal("Error reading the body of the response")
 		return
 	}
 
-	fmt.Print(string(body))
+	fmt.Print(data)
 }

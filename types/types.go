@@ -15,3 +15,8 @@ type Player struct {
 	Fluctuation_History []float32
 	Img_url             string
 }
+
+
+type APIResponse struct {
+	
+} 
