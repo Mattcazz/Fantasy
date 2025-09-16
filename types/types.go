@@ -16,7 +16,18 @@ type Player struct {
 	Img_url             string
 }
 
-
 type APIResponse struct {
-	
-} 
+	Teams []APIResponseTeam `json:"teams"`
+}
+
+type APIResponsePlayer struct {
+	Name        string `json:"name"`
+	Position    string `json:"position"`
+	Nationality string `json:"nationality"`
+}
+
+type APIResponseTeam struct {
+	Name      string              `json:"name"`
+	Crest_URL string              `json:"crest"`
+	Squad     []APIResponsePlayer `json:"squad"`
+}

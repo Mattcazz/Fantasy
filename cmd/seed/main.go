@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/Mattcazz/Fantasy.git/types"
 )
 
 func main() {
@@ -16,7 +18,7 @@ func getTeamsFromAPI() {
 	liga_id := 2014
 	season := 2025
 
-	url := fmt.Sprintf("http://api.football-data.org/v4/competitions/%d/teams?season=%d", liga_id, season)
+	url := fmt.Sprintf("http://api.football-data.org/v4/competitions/%d/teams/?season=%d", liga_id, season)
 	getFromAPIurl(url)
 }
 
@@ -40,14 +42,14 @@ func getFromAPIurl(url string) {
 		return
 	}
 
-	var data map[string]interface{}
+	var responseData types.APIResponse
 
-	err = json.NewDecoder(res.Body).Decode(data)
+	err = json.NewDecoder(res.Body).Decode(&responseData)
 
 	if err != nil {
 		log.Fatal("Error reading the body of the response")
 		return
 	}
 
-	fmt.Print(data)
+	fmt.Print(responseData)
 }

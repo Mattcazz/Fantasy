@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"go.mod/db"
+	"github.com/Mattcazz/Fantasy.git/db"
 )
 
 func main() {
