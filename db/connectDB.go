@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-
-	"github.com/Mattcazz/Fantasy.git/db"
 )
 
 func ConnectDB() *sql.DB {
@@ -19,7 +17,7 @@ func ConnectDB() *sql.DB {
 
 	dsn := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable", dbUser, dbPassword, dbHost, dbPort, dbName) //postgres://USER:PASSWORD@HOST:PORT/DATABASE?OPTIONS
 
-	db, err := db.New(dsn, 30, 30, "15m")
+	db, err := New(dsn, 30, 30, "15m")
 
 	if err != nil {
 		log.Fatal(err)

@@ -1,6 +1,9 @@
 package types
 
-import "database/sql"
+import (
+	"database/sql"
+	"time"
+)
 
 type TeamStore interface {
 	GetTeamByName(string) (*Team, error)
@@ -14,6 +17,13 @@ type PlayerStore interface {
 	DeletePlayer(*Player) error
 	PlayerDailyUpdate(*Player) error
 }
+
+type FluctuationStore interface {
+	InsertFluctuation(*Fluctuation) error
+	GetFluctuationHistoryFromPlayer(int) ([]Fluctuation, error)
+	GetLastFluctuationFromPlayer(int) (Fluctuation, error)
+}
+
 type Team struct {
 	Id       int
 	Name     string
@@ -21,15 +31,20 @@ type Team struct {
 }
 
 type Player struct {
-	Id                  int
-	Name                string
-	Nationality         string
-	Position            string
-	Points              int
-	Price               float32
-	Fluctuation         float32
-	Fluctuation_History []float32
-	Img_url             string
+	Id          int
+	Team_id     int
+	Name        string
+	Nationality string
+	Position    string
+	Points      int
+	Price       float32
+	Img_url     string
+}
+
+type Fluctuation struct {
+	Player_Id  int
+	Value      float32
+	Created_at time.Time
 }
 
 type APIResponse struct {
