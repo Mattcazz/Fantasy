@@ -1,6 +1,7 @@
 package main
 
 import (
+	"database/sql"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -12,15 +13,22 @@ import (
 	"github.com/Mattcazz/Fantasy.git/types"
 )
 
+var database *sql.DB
+
 func main() {
 
 	APIResponse := getTeamsFromAPI()
 
-	db := db.ConnectDB()
+	database = db.ConnectDB()
 
-	playerStore := player.NewPlayerStore(db)
-	teamStore := team.NewTeamStore(db)
+	playerStore := player.NewPlayerStore(database)
+	teamStore := team.NewTeamStore(database)
 
+	err := seedDB(&playerStore, &teamStore, APIResponse)
+
+	if err != nil {
+		log.Fatal(err.Error())
+	}
 }
 
 func getTeamsFromAPI() *types.APIResponse {
@@ -62,4 +70,50 @@ func getFromAPIurl(url string) *types.APIResponse {
 	}
 
 	return &responseData
+}
+
+func seedDB(ps types.PlayerStore, ts types.TeamStore, response *types.APIResponse) error {
+
+	tx, err := database.Begin()
+
+	if err != nil {
+		log.Fatal("Error opening the tx")
+	}
+
+	defer tx.Rollback()
+
+	for _, team := range response.Teams {
+
+		t := &types.Team{
+			Name:     team.Name,
+			Logo_url: team.Crest_URL,
+		}
+
+		if err := ts.InsertTeamTx(tx, t); err != nil {
+			return fmt.Errorf("Tx failed: %s", err.Error())
+		}
+
+		for _, player := range team.Squad {
+
+			p := &types.Player{
+				Name:        player.Name,
+				Nationality: player.Nationality,
+				Position:    player.Position,
+			}
+
+			if err := ps.InsertPlayerTx(tx, p); err != nil {
+				return fmt.Errorf("Tx failed: %s", err.Error())
+			}
+
+			if err := ts.AddPlayerToTeamTx(tx, p.Id, t.Id); err != nil {
+				return fmt.Errorf("Tx failed: %s", err.Error())
+			}
+		}
+	}
+
+	if err := tx.Commit(); err != nil {
+		return fmt.Errorf("Tx commit failed: %s", err.Error())
+	}
+
+	return nil
 }

@@ -16,7 +16,7 @@ func NewPlayerStore(db *sql.DB) Store {
 	}
 }
 
-func (s *Store) CreatePlayer(player *types.Player) error {
+func (s *Store) InsertPlayerTx(tx *sql.Tx, player *types.Player) error {
 	return nil
 }
 

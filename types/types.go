@@ -1,28 +1,31 @@
 package types
 
+import "database/sql"
+
 type TeamStore interface {
 	GetTeamByName(string) (*Team, error)
-	CreateTeam(*Team) error
+	InsertTeamTx(*sql.Tx, *Team) error
 	DeleteTeam(*Team) error
-	AddPlayerToTeam(int, int) error
+	AddPlayerToTeamTx(*sql.Tx, int, int) error
 }
 
 type PlayerStore interface {
-	CreatePlayer(*Player) error
+	InsertPlayerTx(*sql.Tx, *Player) error
 	DeletePlayer(*Player) error
 	PlayerDailyUpdate(*Player) error
 }
 type Team struct {
 	Id       int
 	Name     string
-	Code     string
 	Logo_url string
 }
 
 type Player struct {
 	Id                  int
 	Name                string
-	Points              string
+	Nationality         string
+	Position            string
+	Points              int
 	Price               float32
 	Fluctuation         float32
 	Fluctuation_History []float32

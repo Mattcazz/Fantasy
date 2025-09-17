@@ -20,7 +20,7 @@ func (s *Store) GetTeamByName(name string) (*types.Team, error) {
 	return nil, nil
 }
 
-func (s *Store) CreateTema(team *types.Team) error {
+func (s *Store) InsertTeamTx(tx *sql.Tx, team *types.Team) error {
 	return nil
 }
 
@@ -28,6 +28,6 @@ func (s *Store) DeleteTeam(team *types.Team) error {
 	return nil
 }
 
-func (s *Store) AddPlayerToTeam(player_id, team_id int) error {
+func (s *Store) AddPlayerToTeamTx(tx *sql.Tx, player_id, team_id int) error {
 	return nil
 }
