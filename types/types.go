@@ -21,7 +21,7 @@ type PlayerStore interface {
 type FluctuationStore interface {
 	InsertFluctuation(*Fluctuation) error
 	GetFluctuationHistoryFromPlayer(int) ([]Fluctuation, error)
-	GetLastFluctuationFromPlayer(int) (Fluctuation, error)
+	GetLastFluctuationFromPlayer(int) (*Fluctuation, error)
 }
 
 type Team struct {
