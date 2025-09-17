@@ -1,13 +1,26 @@
 package types
 
+type TeamStore interface {
+	GetTeamByName(string) (*Team, error)
+	CreateTeam(*Team) error
+	DeleteTeam(*Team) error
+	AddPlayerToTeam(int, int) error
+}
+
+type PlayerStore interface {
+	CreatePlayer(*Player) error
+	DeletePlayer(*Player) error
+	PlayerDailyUpdate(*Player) error
+}
 type Team struct {
+	Id       int
 	Name     string
 	Code     string
 	Logo_url string
 }
 
 type Player struct {
-	Id                  string
+	Id                  int
 	Name                string
 	Points              string
 	Price               float32
