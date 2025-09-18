@@ -49,12 +49,12 @@ func (s *Store) PlayerDailyUpdate(player *types.Player) error {
 func scanPlayerRow(row *sql.Rows, player *types.Player) error {
 	return row.Scan(
 		&player.Id,
-		&player.Team_id,
 		&player.Name,
 		&player.Nationality,
 		&player.Position,
 		&player.Points,
 		&player.Price,
 		&player.Img_url,
+		&player.Team_id,
 	)
 }

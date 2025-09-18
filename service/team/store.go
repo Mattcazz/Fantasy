@@ -42,12 +42,16 @@ func (s *Store) InsertTeamTx(tx *sql.Tx, team *types.Team) error {
 
 	row, err := tx.Query(query, team.Name, team.Logo_url)
 
+	if err != nil {
+		return fmt.Errorf("error executing query -> %s", err.Error())
+	}
+
 	for row.Next() {
 		err = scanTeamRow(row, team)
 	}
 
 	if err != nil {
-		return fmt.Errorf("error inserting team tx: %s", err.Error())
+		return fmt.Errorf("error inserting team tx -> %s", err.Error())
 	}
 
 	return nil
