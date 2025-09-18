@@ -99,13 +99,10 @@ func seedDB(ps types.PlayerStore, ts types.TeamStore, response *types.APIRespons
 				Name:        player.Name,
 				Nationality: player.Nationality,
 				Position:    player.Position,
+				Team_id:     t.Id,
 			}
 
 			if err := ps.InsertPlayerTx(tx, p); err != nil {
-				return fmt.Errorf("Tx failed: %s", err.Error())
-			}
-
-			if err := ts.AddPlayerToTeamTx(tx, p.Id, t.Id); err != nil {
 				return fmt.Errorf("Tx failed: %s", err.Error())
 			}
 		}

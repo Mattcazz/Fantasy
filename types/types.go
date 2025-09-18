@@ -9,7 +9,6 @@ type TeamStore interface {
 	GetTeamByName(string) (*Team, error)
 	InsertTeamTx(*sql.Tx, *Team) error
 	DeleteTeam(*Team) error
-	AddPlayerToTeamTx(*sql.Tx, int, int) error
 }
 
 type PlayerStore interface {

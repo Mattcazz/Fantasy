@@ -10,7 +10,7 @@ type Store struct {
 	db *sql.DB
 }
 
-func NewFluctuationStore(db *sql.DB) Store {
+ func NewFluctuationStore(db *sql.DB) Store {
 	return Store{db: db}
 }
 

@@ -18,7 +18,7 @@ func NewTeamStore(db *sql.DB) Store {
 }
 
 func (s *Store) GetTeamByName(name string) (*types.Team, error) {
-	query := "SELECT * FROM team WHERE name = ?"
+	query := "SELECT * FROM team WHERE name = $1"
 
 	row, err := s.db.Query(query, name)
 
@@ -27,7 +27,9 @@ func (s *Store) GetTeamByName(name string) (*types.Team, error) {
 	}
 
 	for row.Next() {
-		return scanTeamRow(row)
+		team := new(types.Team)
+		err = scanTeamRow(row, team)
+		return team, err
 	}
 
 	return nil, fmt.Errorf("the search came up with no results")
@@ -35,19 +37,32 @@ func (s *Store) GetTeamByName(name string) (*types.Team, error) {
 }
 
 func (s *Store) InsertTeamTx(tx *sql.Tx, team *types.Team) error {
+	query := `INSERT INTO TEAM (name, logo_url)
+				VALUES ($1, $2) RETURNING *`
+
+	row, err := tx.Query(query, team.Name, team.Logo_url)
+
+	for row.Next() {
+		err = scanTeamRow(row, team)
+	}
+
+	if err != nil {
+		return fmt.Errorf("error inserting team tx: %s", err.Error())
+	}
+
 	return nil
+
 }
 
 func (s *Store) DeleteTeam(team *types.Team) error {
-	return nil
+	query := `DELETE FROM team WHERE id = $1`
+
+	_, err := s.db.Query(query, team.Id)
+
+	return err
 }
 
-func (s *Store) AddPlayerToTeamTx(tx *sql.Tx, player_id, team_id int) error {
-	return nil
-}
-
-func scanTeamRow(row *sql.Rows) (*types.Team, error) {
-	team := new(types.Team)
+func scanTeamRow(row *sql.Rows, team *types.Team) error {
 
 	err := row.Scan(
 		&team.Id,
@@ -55,5 +70,5 @@ func scanTeamRow(row *sql.Rows) (*types.Team, error) {
 		&team.Logo_url,
 	)
 
-	return team, err
+	return err
 }
