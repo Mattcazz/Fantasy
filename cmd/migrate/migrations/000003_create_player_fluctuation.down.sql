@@ -1,1 +1,1 @@
-DROP TABLE IF NOT EXISTS player_fluctuation;
+DROP TABLE IF EXISTS player_fluctuation;
