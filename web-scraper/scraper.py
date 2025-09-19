@@ -1,5 +1,6 @@
 import requests
 import json
+from bs4 import BeautifulSoup
 
 player_url = "https://app.analiticafantasy.com/api/fantasy-stats/get-fantasy-stats"
 market_url = "https://app.analiticafantasy.com/api/fantasy-players/mercado"
@@ -41,5 +42,21 @@ def scrape(url, headers, payload, file_name):
         print("Status:", response.status_code)
         print(response.text[:500])
 
-scrape(market_url, HEADERS, market_payload, "market.json")
-scrape(player_url, HEADERS, player_payload, "player.json")
+def team_scrape (url, headers, file_name):
+    response  = requests.get(url, headers=headers)  
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    script_tag = soup.find("script", {"id": "__NEXT_DATA__", "type": "application/json"})
+
+    if script_tag:
+        data = json.loads(script_tag.string)
+        with open(file_name, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"Archivo '{file_name}' guardado correctamente")
+    else:
+        print("Element not found")
+
+
+#scrape(market_url, HEADERS, market_payload, "market.json")
+#scrape(player_url, HEADERS, player_payload, "player.json")
+team_scrape("https://analiticafantasy.com/clasificacion", HEADERS, "team.json")
