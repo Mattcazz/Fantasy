@@ -1,8 +1,11 @@
 run: 
 	@go run cmd/app/*.go
 
-seed: 
+seed: scrape 
 	@go run cmd/seed/*.go
+
+scrape:  
+	@python3 web-scraper/scraper.py 
 
 migration: 
 	@migrate create -ext sql -dir cmd/migrate/migrations

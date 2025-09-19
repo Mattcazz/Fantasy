@@ -12,6 +12,6 @@ func main() {
 
 	server := NewAppServer(":8080", db)
 	if err := server.Run(); err != nil {
-		log.Fatal("Error en establecer la conexion")
+		log.Fatal("Error al  establecer la conexion")
 	}
 }
