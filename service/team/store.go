@@ -18,8 +18,8 @@ func NewTeamStore(db *sql.DB) Store {
 }
 
 func (s *Store) GetTeamByName(name string) (*types.Team, error) {
-	query := "SELECT * FROM team WHERE name = $1"
 
+	query := "SELECT * FROM team WHERE $1 LIKE '%' || name || '%'"
 	row, err := s.db.Query(query, name)
 
 	if err != nil {
@@ -32,15 +32,15 @@ func (s *Store) GetTeamByName(name string) (*types.Team, error) {
 		return team, err
 	}
 
-	return nil, fmt.Errorf("the search came up with no results")
+	return nil, fmt.Errorf("the search came up with no results for %s", name)
 
 }
 
 func (s *Store) InsertTeamTx(tx *sql.Tx, team *types.Team) error {
-	query := `INSERT INTO TEAM (name, logo_url)
-				VALUES ($1, $2) RETURNING *`
+	query := `INSERT INTO TEAM (name, logo_url, web_id)
+				VALUES ($1, $2, $3) RETURNING *`
 
-	row, err := tx.Query(query, team.Name, team.Logo_url)
+	row, err := tx.Query(query, team.Name, team.Logo_url, team.Web_Id)
 
 	if err != nil {
 		return fmt.Errorf("error executing query -> %s", err.Error())
@@ -72,6 +72,7 @@ func scanTeamRow(row *sql.Rows, team *types.Team) error {
 		&team.Id,
 		&team.Name,
 		&team.Logo_url,
+		&team.Web_Id,
 	)
 
 	return err

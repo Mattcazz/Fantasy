@@ -18,10 +18,12 @@ func NewPlayerStore(db *sql.DB) Store {
 }
 
 func (s *Store) InsertPlayerTx(tx *sql.Tx, player *types.Player) error {
-	query := `INSERT INTO player (team_id, name, nationality, position)
-				VALUES ($1, $2, $3, $4) RETURNING *`
+	query := `INSERT INTO player (team_id, name, points, price,avg,goals, assists, web_id )
+				VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`
 
-	row, err := tx.Query(query, player.Team_id, player.Name, player.Nationality, player.Position)
+	row, err := tx.Query(query,
+		player.Team_id, player.Name, player.Points, player.Value,
+		player.Avg, player.Goals, player.Assists, player.WebID)
 
 	if err != nil {
 		return err
@@ -49,12 +51,14 @@ func (s *Store) PlayerDailyUpdate(player *types.Player) error {
 func scanPlayerRow(row *sql.Rows, player *types.Player) error {
 	return row.Scan(
 		&player.Id,
-		&player.Name,
-		&player.Nationality,
-		&player.Position,
-		&player.Points,
-		&player.Price,
-		&player.Img_url,
 		&player.Team_id,
+		&player.Name,
+		&player.Points,
+		&player.Value,
+		&player.Avg,
+		&player.Goals,
+		&player.Assists,
+		&player.Img_url,
+		&player.WebID,
 	)
 }

@@ -27,17 +27,20 @@ type Team struct {
 	Id       int
 	Name     string
 	Logo_url string
+	Web_Id   int
 }
 
 type Player struct {
-	Id          int
-	Team_id     int
-	Name        string
-	Nationality string
-	Position    string
-	Points      int
-	Price       float32
-	Img_url     string
+	Id      int
+	Team_id int
+	Name    string
+	Points  int
+	Value   float32
+	Avg     float32
+	Goals   int
+	Assists int
+	Img_url string
+	WebID   int
 }
 
 type Fluctuation struct {
@@ -46,18 +49,42 @@ type Fluctuation struct {
 	Created_at time.Time
 }
 
-type APIResponse struct {
-	Teams []APIResponseTeam `json:"teams"`
+type ScrapeResponse struct {
+	Teams   []ScrapeTeamResponse
+	Players *[]ScrapePlayer
 }
 
-type APIResponsePlayer struct {
-	Name        string `json:"name"`
-	Position    string `json:"position"`
-	Nationality string `json:"nationality"`
+type ScrapePlayerResponse struct {
+	Players []ScrapePlayer `json:"players"`
 }
 
-type APIResponseTeam struct {
-	Name      string              `json:"name"`
-	Crest_URL string              `json:"crest"`
-	Squad     []APIResponsePlayer `json:"squad"`
+type ScrapePlayer struct {
+	Name    string  `json:"nn"`
+	Team    string  `json:"tn"`
+	Points  int     `json:"tp"`
+	WebID   int     `json:"id"`
+	Value   float32 `json:"mv"`
+	Avg     float32 `json:"avg"`
+	Goals   int     `json:"g"`
+	Assists int     `json:"ga"`
+}
+
+type ScrapeTeamResponse struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+	Logo string `json:"logo"`
+}
+
+type Root struct {
+	Props struct {
+		PageProps struct {
+			Data struct {
+				Clasificacion struct {
+					Standings [][]struct {
+						Team ScrapeTeamResponse `json:"team"`
+					} `json:"standings"`
+				} `json:"clasificacion"`
+			} `json:"data"`
+		} `json:"pageProps"`
+	} `json:"props"`
 }
