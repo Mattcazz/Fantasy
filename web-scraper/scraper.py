@@ -57,6 +57,6 @@ def team_scrape (url, headers, file_name):
         print("Element not found")
 
 
-#scrape(market_url, HEADERS, market_payload, "market.json")
-#scrape(player_url, HEADERS, player_payload, "player.json")
+scrape(market_url, HEADERS, market_payload, "market.json")
+scrape(player_url, HEADERS, player_payload, "player.json")
 team_scrape("https://analiticafantasy.com/clasificacion", HEADERS, "team.json")
