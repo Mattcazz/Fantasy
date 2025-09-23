@@ -41,7 +41,7 @@ func getResponseFromScraper() *types.ScrapeResponse {
 
 	var res types.ScrapeResponse
 
-	var root types.Root
+	var root types.TeamRoot
 	err = json.Unmarshal(file, &root)
 
 	if err != nil {
@@ -60,7 +60,7 @@ func getResponseFromScraper() *types.ScrapeResponse {
 		return nil
 	}
 
-	var player_response types.ScrapePlayerResponse
+	var player_response types.PlayerRoot
 
 	err = json.Unmarshal(file, &player_response)
 
@@ -72,6 +72,27 @@ func getResponseFromScraper() *types.ScrapeResponse {
 	res.Players = &player_response.Players
 
 	return &res
+}
+
+func getPlayerPicURL(player_id int) string {
+	return fmt.Sprintf("https://assets.analiticafantasy.com/jugadores/%d.png?width=75&height=73&version=22", player_id)
+}
+
+func getPlayerPosFromPID(pid int) (string, error) {
+	if pid == 1 {
+		return "Goalkeeper", nil
+	}
+	if pid == 2 {
+		return "Defender", nil
+	}
+	if pid == 3 {
+		return "Midfielder", nil
+	}
+	if pid == 4 {
+		return "Attacker", nil
+	}
+
+	return "", fmt.Errorf("wrong position id: %d is not a valid pid", pid)
 }
 
 func seedDB(ps types.PlayerStore, ts types.TeamStore, response *types.ScrapeResponse) error {
@@ -97,24 +118,32 @@ func seedDB(ps types.PlayerStore, ts types.TeamStore, response *types.ScrapeResp
 		}
 	}
 
-	/*	for _, player := range *response.Players {
+	for _, player := range *response.Players {
 
-			p := &types.Player{
-				Name:    player.Name,
-				Team_id: t.Id,
-				Points:  player.Points,
-				Value:   player.Value,
-				Goals:   player.Goals,
-				Assists: player.Assists,
-				WebID:   player.WebID,
-			}
+		position, err := getPlayerPosFromPID(player.PosId)
 
-			if err := ps.InsertPlayerTx(tx, p); err != nil {
-				return fmt.Errorf("Tx failed: %s", err.Error())
-			}
-
+		if err != nil {
+			return fmt.Errorf("Tx failed: %s", err.Error())
 		}
-	*/
+
+		p := &types.Player{
+			Name:     player.Name,
+			Team_id:  player.Team.Id,
+			WebID:    player.WebID,
+			Points:   int(player.Points.Points),
+			Avg:      player.Points.Avg,
+			Img_url:  getPlayerPicURL(player.WebID),
+			Value:    player.Value.Value,
+			Status:   player.Status.Status,
+			Position: position,
+		}
+
+		if err := ps.InsertPlayerTx(tx, p); err != nil {
+			return fmt.Errorf("Tx failed: %s", err.Error())
+		}
+
+	}
+
 	if err := tx.Commit(); err != nil {
 		return fmt.Errorf("Tx player commit failed: %s", err.Error())
 	}

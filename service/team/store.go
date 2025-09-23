@@ -19,7 +19,7 @@ func NewTeamStore(db *sql.DB) Store {
 
 func (s *Store) GetTeamByName(name string) (*types.Team, error) {
 
-	query := "SELECT * FROM team WHERE $1 LIKE '%' || name || '%'"
+	query := "SELECT * FROM teams WHERE $1 LIKE '%' || name || '%'"
 	row, err := s.db.Query(query, name)
 
 	if err != nil {
@@ -37,7 +37,7 @@ func (s *Store) GetTeamByName(name string) (*types.Team, error) {
 }
 
 func (s *Store) InsertTeamTx(tx *sql.Tx, team *types.Team) error {
-	query := `INSERT INTO TEAM (name, logo_url, web_id)
+	query := `INSERT INTO teams (name, logo_url, web_id)
 				VALUES ($1, $2, $3) RETURNING *`
 
 	row, err := tx.Query(query, team.Name, team.Logo_url, team.Web_Id)
@@ -59,7 +59,7 @@ func (s *Store) InsertTeamTx(tx *sql.Tx, team *types.Team) error {
 }
 
 func (s *Store) DeleteTeam(team *types.Team) error {
-	query := `DELETE FROM team WHERE id = $1`
+	query := `DELETE FROM teams WHERE id = $1`
 
 	_, err := s.db.Query(query, team.Id)
 
