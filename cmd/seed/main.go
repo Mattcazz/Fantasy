@@ -15,6 +15,11 @@ import (
 
 var database *sql.DB
 
+const (
+	playersFileName string = "player.json"
+	teamsFileName   string = "team.json"
+)
+
 func main() {
 
 	ScrapeResponse := getResponseFromScraper()
@@ -32,7 +37,7 @@ func main() {
 }
 
 func getResponseFromScraper() *types.ScrapeResponse {
-	file, err := os.ReadFile("team.json")
+	file, err := os.ReadFile(teamsFileName)
 
 	if err != nil {
 		log.Fatal(err.Error())
@@ -53,7 +58,7 @@ func getResponseFromScraper() *types.ScrapeResponse {
 		res.Teams = append(res.Teams, s.Team)
 	}
 
-	file, err = os.ReadFile("player.json")
+	file, err = os.ReadFile(playersFileName)
 
 	if err != nil {
 		log.Fatal(err.Error())
@@ -70,6 +75,9 @@ func getResponseFromScraper() *types.ScrapeResponse {
 	}
 
 	res.Players = &player_response.Players
+
+	os.Remove(playersFileName)
+	os.Remove(teamsFileName)
 
 	return &res
 }
