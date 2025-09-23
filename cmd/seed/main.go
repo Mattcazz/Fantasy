@@ -97,40 +97,24 @@ func seedDB(ps types.PlayerStore, ts types.TeamStore, response *types.ScrapeResp
 		}
 	}
 
-	if err := tx.Commit(); err != nil {
-		return fmt.Errorf("Tx team commit failed: %s", err.Error())
-	}
+	/*	for _, player := range *response.Players {
 
-	tx, err = database.Begin()
+			p := &types.Player{
+				Name:    player.Name,
+				Team_id: t.Id,
+				Points:  player.Points,
+				Value:   player.Value,
+				Goals:   player.Goals,
+				Assists: player.Assists,
+				WebID:   player.WebID,
+			}
 
-	if err != nil {
-		log.Fatal("Error opening the tx")
-	}
+			if err := ps.InsertPlayerTx(tx, p); err != nil {
+				return fmt.Errorf("Tx failed: %s", err.Error())
+			}
 
-	for _, player := range *response.Players {
-
-		t, err := ts.GetTeamByName(player.Team)
-
-		if err != nil {
-			return fmt.Errorf("team by name errror: %s", err.Error())
 		}
-
-		p := &types.Player{
-			Name:    player.Name,
-			Team_id: t.Id,
-			Points:  player.Points,
-			Value:   player.Value,
-			Goals:   player.Goals,
-			Assists: player.Assists,
-			WebID:   player.WebID,
-		}
-
-		if err := ps.InsertPlayerTx(tx, p); err != nil {
-			return fmt.Errorf("Tx failed: %s", err.Error())
-		}
-
-	}
-
+	*/
 	if err := tx.Commit(); err != nil {
 		return fmt.Errorf("Tx player commit failed: %s", err.Error())
 	}

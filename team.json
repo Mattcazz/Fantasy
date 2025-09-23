@@ -22,29 +22,29 @@
                   "name": "Real Madrid",
                   "logo": "https://media.api-sports.io/football/teams/541.png"
                 },
-                "points": 12,
-                "goalsDiff": 6,
+                "points": 15,
+                "goalsDiff": 8,
                 "group": "Primera División",
-                "form": "WWWW",
+                "form": "WWWWW",
                 "status": "same",
                 "description": "Promotion - Champions League (League phase: )",
                 "all": {
-                  "played": 4,
-                  "win": 4,
+                  "played": 5,
+                  "win": 5,
                   "draw": 0,
                   "lose": 0,
                   "goals": {
-                    "for": 8,
+                    "for": 10,
                     "against": 2
                   }
                 },
                 "home": {
-                  "played": 2,
-                  "win": 2,
+                  "played": 3,
+                  "win": 3,
                   "draw": 0,
                   "lose": 0,
                   "goals": {
-                    "for": 3,
+                    "for": 5,
                     "against": 1
                   }
                 },
@@ -58,7 +58,7 @@
                     "against": 1
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
                 "rank": 2,
@@ -67,29 +67,29 @@
                   "name": "Barcelona",
                   "logo": "https://media.api-sports.io/football/teams/529.png"
                 },
-                "points": 10,
-                "goalsDiff": 10,
+                "points": 13,
+                "goalsDiff": 13,
                 "group": "Primera División",
-                "form": "WDWW",
+                "form": "WWDWW",
                 "status": "same",
                 "description": "Promotion - Champions League (League phase: )",
                 "all": {
-                  "played": 4,
-                  "win": 3,
+                  "played": 5,
+                  "win": 4,
                   "draw": 1,
                   "lose": 0,
                   "goals": {
-                    "for": 13,
+                    "for": 16,
                     "against": 3
                   }
                 },
                 "home": {
-                  "played": 1,
-                  "win": 1,
+                  "played": 2,
+                  "win": 2,
                   "draw": 0,
                   "lose": 0,
                   "goals": {
-                    "for": 6,
+                    "for": 9,
                     "against": 0
                   }
                 },
@@ -103,29 +103,74 @@
                     "against": 3
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
                 "rank": 3,
+                "team": {
+                  "id": 533,
+                  "name": "Villarreal",
+                  "logo": "https://media.api-sports.io/football/teams/533.png"
+                },
+                "points": 10,
+                "goalsDiff": 6,
+                "group": "Primera División",
+                "form": "WLDWW",
+                "status": "same",
+                "description": "Promotion - Champions League (League phase: )",
+                "all": {
+                  "played": 5,
+                  "win": 3,
+                  "draw": 1,
+                  "lose": 1,
+                  "goals": {
+                    "for": 10,
+                    "against": 4
+                  }
+                },
+                "home": {
+                  "played": 3,
+                  "win": 3,
+                  "draw": 0,
+                  "lose": 0,
+                  "goals": {
+                    "for": 9,
+                    "against": 1
+                  }
+                },
+                "away": {
+                  "played": 2,
+                  "win": 0,
+                  "draw": 1,
+                  "lose": 1,
+                  "goals": {
+                    "for": 1,
+                    "against": 3
+                  }
+                },
+                "update": "2025-09-22T00:00:00+00:00"
+              },
+              {
+                "rank": 4,
                 "team": {
                   "id": 540,
                   "name": "Espanyol",
                   "logo": "https://media.api-sports.io/football/teams/540.png"
                 },
                 "points": 10,
-                "goalsDiff": 3,
+                "goalsDiff": 1,
                 "group": "Primera División",
-                "form": "WWDW",
+                "form": "LWWDW",
                 "status": "same",
                 "description": "Promotion - Champions League (League phase: )",
                 "all": {
-                  "played": 4,
+                  "played": 5,
                   "win": 3,
                   "draw": 1,
-                  "lose": 0,
+                  "lose": 1,
                   "goals": {
                     "for": 8,
-                    "against": 5
+                    "against": 7
                   }
                 },
                 "home": {
@@ -139,19 +184,64 @@
                   }
                 },
                 "away": {
-                  "played": 1,
+                  "played": 2,
                   "win": 0,
+                  "draw": 1,
+                  "lose": 1,
+                  "goals": {
+                    "for": 2,
+                    "against": 4
+                  }
+                },
+                "update": "2025-09-22T00:00:00+00:00"
+              },
+              {
+                "rank": 5,
+                "team": {
+                  "id": 797,
+                  "name": "Elche",
+                  "logo": "https://media.api-sports.io/football/teams/797.png"
+                },
+                "points": 9,
+                "goalsDiff": 3,
+                "group": "Primera División",
+                "form": "WDWDD",
+                "status": "same",
+                "description": "Promotion - Europa League (League phase: )",
+                "all": {
+                  "played": 5,
+                  "win": 2,
+                  "draw": 3,
+                  "lose": 0,
+                  "goals": {
+                    "for": 7,
+                    "against": 4
+                  }
+                },
+                "home": {
+                  "played": 3,
+                  "win": 2,
                   "draw": 1,
                   "lose": 0,
                   "goals": {
-                    "for": 2,
-                    "against": 2
+                    "for": 4,
+                    "against": 1
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "away": {
+                  "played": 2,
+                  "win": 0,
+                  "draw": 2,
+                  "lose": 0,
+                  "goals": {
+                    "for": 3,
+                    "against": 3
+                  }
+                },
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 4,
+                "rank": 6,
                 "team": {
                   "id": 543,
                   "name": "Real Betis",
@@ -162,7 +252,7 @@
                 "group": "Primera División",
                 "form": "WDLDW",
                 "status": "same",
-                "description": "Promotion - Champions League (League phase: )",
+                "description": "Promotion - Conference League (Qualification: )",
                 "all": {
                   "played": 6,
                   "win": 2,
@@ -193,29 +283,28 @@
                     "against": 4
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 5,
+                "rank": 7,
                 "team": {
                   "id": 531,
                   "name": "Athletic Club",
                   "logo": "https://media.api-sports.io/football/teams/531.png"
                 },
                 "points": 9,
-                "goalsDiff": 2,
+                "goalsDiff": 0,
                 "group": "Primera División",
-                "form": "LWWW",
+                "form": "LLWWW",
                 "status": "same",
-                "description": "Promotion - Europa League (League phase: )",
                 "all": {
-                  "played": 4,
+                  "played": 5,
                   "win": 3,
                   "draw": 0,
-                  "lose": 1,
+                  "lose": 2,
                   "goals": {
                     "for": 6,
-                    "against": 4
+                    "against": 6
                   }
                 },
                 "home": {
@@ -229,38 +318,37 @@
                   }
                 },
                 "away": {
-                  "played": 1,
+                  "played": 2,
                   "win": 1,
                   "draw": 0,
-                  "lose": 0,
+                  "lose": 1,
                   "goals": {
                     "for": 2,
-                    "against": 1
+                    "against": 3
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 6,
+                "rank": 8,
                 "team": {
                   "id": 546,
                   "name": "Getafe",
                   "logo": "https://media.api-sports.io/football/teams/546.png"
                 },
                 "points": 9,
-                "goalsDiff": 2,
+                "goalsDiff": -1,
                 "group": "Primera División",
-                "form": "WLWW",
+                "form": "LWLWW",
                 "status": "same",
-                "description": "Promotion - Conference League (Qualification: )",
                 "all": {
-                  "played": 4,
+                  "played": 5,
                   "win": 3,
                   "draw": 0,
-                  "lose": 1,
+                  "lose": 2,
                   "goals": {
                     "for": 6,
-                    "against": 4
+                    "against": 7
                   }
                 },
                 "home": {
@@ -274,91 +362,91 @@
                   }
                 },
                 "away": {
-                  "played": 3,
-                  "win": 2,
-                  "draw": 0,
-                  "lose": 1,
-                  "goals": {
-                    "for": 4,
-                    "against": 4
-                  }
-                },
-                "update": "2025-09-19T00:00:00+00:00"
-              },
-              {
-                "rank": 7,
-                "team": {
-                  "id": 533,
-                  "name": "Villarreal",
-                  "logo": "https://media.api-sports.io/football/teams/533.png"
-                },
-                "points": 7,
-                "goalsDiff": 5,
-                "group": "Primera División",
-                "form": "LDWW",
-                "status": "same",
-                "all": {
                   "played": 4,
                   "win": 2,
-                  "draw": 1,
-                  "lose": 1,
+                  "draw": 0,
+                  "lose": 2,
                   "goals": {
-                    "for": 8,
-                    "against": 3
+                    "for": 4,
+                    "against": 7
+                  }
+                },
+                "update": "2025-09-22T00:00:00+00:00"
+              },
+              {
+                "rank": 9,
+                "team": {
+                  "id": 536,
+                  "name": "Sevilla",
+                  "logo": "https://media.api-sports.io/football/teams/536.png"
+                },
+                "points": 7,
+                "goalsDiff": 1,
+                "group": "Primera División",
+                "form": "WDWLL",
+                "status": "same",
+                "all": {
+                  "played": 5,
+                  "win": 2,
+                  "draw": 1,
+                  "lose": 2,
+                  "goals": {
+                    "for": 9,
+                    "against": 8
                   }
                 },
                 "home": {
-                  "played": 2,
-                  "win": 2,
-                  "draw": 0,
-                  "lose": 0,
-                  "goals": {
-                    "for": 7,
-                    "against": 0
-                  }
-                },
-                "away": {
                   "played": 2,
                   "win": 0,
                   "draw": 1,
                   "lose": 1,
                   "goals": {
-                    "for": 1,
-                    "against": 3
+                    "for": 3,
+                    "against": 4
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "away": {
+                  "played": 3,
+                  "win": 2,
+                  "draw": 0,
+                  "lose": 1,
+                  "goals": {
+                    "for": 6,
+                    "against": 4
+                  }
+                },
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 8,
+                "rank": 10,
                 "team": {
                   "id": 542,
                   "name": "Alaves",
                   "logo": "https://media.api-sports.io/football/teams/542.png"
                 },
                 "points": 7,
-                "goalsDiff": 1,
+                "goalsDiff": 0,
                 "group": "Primera División",
-                "form": "WDLW",
+                "form": "LWDLW",
                 "status": "same",
                 "all": {
-                  "played": 4,
+                  "played": 5,
                   "win": 2,
+                  "draw": 1,
+                  "lose": 2,
+                  "goals": {
+                    "for": 5,
+                    "against": 5
+                  }
+                },
+                "home": {
+                  "played": 3,
+                  "win": 1,
                   "draw": 1,
                   "lose": 1,
                   "goals": {
                     "for": 4,
-                    "against": 3
-                  }
-                },
-                "home": {
-                  "played": 2,
-                  "win": 1,
-                  "draw": 1,
-                  "lose": 0,
-                  "goals": {
-                    "for": 3,
-                    "against": 2
+                    "against": 4
                   }
                 },
                 "away": {
@@ -371,28 +459,72 @@
                     "against": 1
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 9,
+                "rank": 11,
                 "team": {
-                  "id": 797,
-                  "name": "Elche",
-                  "logo": "https://media.api-sports.io/football/teams/797.png"
+                  "id": 532,
+                  "name": "Valencia",
+                  "logo": "https://media.api-sports.io/football/teams/532.png"
                 },
-                "points": 6,
-                "goalsDiff": 2,
+                "points": 7,
+                "goalsDiff": -2,
                 "group": "Primera División",
-                "form": "DWDD",
+                "form": "WLWLD",
                 "status": "same",
                 "all": {
-                  "played": 4,
-                  "win": 1,
-                  "draw": 3,
+                  "played": 5,
+                  "win": 2,
+                  "draw": 1,
+                  "lose": 2,
+                  "goals": {
+                    "for": 6,
+                    "against": 8
+                  }
+                },
+                "home": {
+                  "played": 3,
+                  "win": 2,
+                  "draw": 1,
                   "lose": 0,
                   "goals": {
                     "for": 6,
-                    "against": 4
+                    "against": 1
+                  }
+                },
+                "away": {
+                  "played": 2,
+                  "win": 0,
+                  "draw": 0,
+                  "lose": 2,
+                  "goals": {
+                    "for": 0,
+                    "against": 7
+                  }
+                },
+                "update": "2025-09-22T00:00:00+00:00"
+              },
+              {
+                "rank": 12,
+                "team": {
+                  "id": 530,
+                  "name": "Atletico Madrid",
+                  "logo": "https://media.api-sports.io/football/teams/530.png"
+                },
+                "points": 6,
+                "goalsDiff": 1,
+                "group": "Primera División",
+                "form": "DWDDL",
+                "status": "same",
+                "all": {
+                  "played": 5,
+                  "win": 1,
+                  "draw": 3,
+                  "lose": 1,
+                  "goals": {
+                    "for": 6,
+                    "against": 5
                   }
                 },
                 "home": {
@@ -406,37 +538,37 @@
                   }
                 },
                 "away": {
-                  "played": 2,
+                  "played": 3,
                   "win": 0,
                   "draw": 2,
-                  "lose": 0,
+                  "lose": 1,
                   "goals": {
                     "for": 3,
-                    "against": 3
+                    "against": 4
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 10,
+                "rank": 13,
                 "team": {
                   "id": 727,
                   "name": "Osasuna",
                   "logo": "https://media.api-sports.io/football/teams/727.png"
                 },
                 "points": 6,
-                "goalsDiff": 1,
+                "goalsDiff": 0,
                 "group": "Primera División",
-                "form": "WLWL",
+                "form": "LWLWL",
                 "status": "same",
                 "all": {
-                  "played": 4,
+                  "played": 5,
                   "win": 2,
                   "draw": 0,
-                  "lose": 2,
+                  "lose": 3,
                   "goals": {
-                    "for": 3,
-                    "against": 2
+                    "for": 4,
+                    "against": 4
                   }
                 },
                 "home": {
@@ -450,135 +582,47 @@
                   }
                 },
                 "away": {
-                  "played": 2,
+                  "played": 3,
                   "win": 0,
                   "draw": 0,
-                  "lose": 2,
+                  "lose": 3,
                   "goals": {
-                    "for": 0,
-                    "against": 2
-                  }
-                },
-                "update": "2025-09-19T00:00:00+00:00"
-              },
-              {
-                "rank": 11,
-                "team": {
-                  "id": 530,
-                  "name": "Atletico Madrid",
-                  "logo": "https://media.api-sports.io/football/teams/530.png"
-                },
-                "points": 5,
-                "goalsDiff": 1,
-                "group": "Primera División",
-                "form": "WDDL",
-                "status": "same",
-                "all": {
-                  "played": 4,
-                  "win": 1,
-                  "draw": 2,
-                  "lose": 1,
-                  "goals": {
-                    "for": 5,
+                    "for": 1,
                     "against": 4
                   }
                 },
-                "home": {
-                  "played": 2,
-                  "win": 1,
-                  "draw": 1,
-                  "lose": 0,
-                  "goals": {
-                    "for": 3,
-                    "against": 1
-                  }
-                },
-                "away": {
-                  "played": 2,
-                  "win": 0,
-                  "draw": 1,
-                  "lose": 1,
-                  "goals": {
-                    "for": 2,
-                    "against": 3
-                  }
-                },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 12,
-                "team": {
-                  "id": 536,
-                  "name": "Sevilla",
-                  "logo": "https://media.api-sports.io/football/teams/536.png"
-                },
-                "points": 4,
-                "goalsDiff": 0,
-                "group": "Primera División",
-                "form": "DWLL",
-                "status": "same",
-                "all": {
-                  "played": 4,
-                  "win": 1,
-                  "draw": 1,
-                  "lose": 2,
-                  "goals": {
-                    "for": 7,
-                    "against": 7
-                  }
-                },
-                "home": {
-                  "played": 2,
-                  "win": 0,
-                  "draw": 1,
-                  "lose": 1,
-                  "goals": {
-                    "for": 3,
-                    "against": 4
-                  }
-                },
-                "away": {
-                  "played": 2,
-                  "win": 1,
-                  "draw": 0,
-                  "lose": 1,
-                  "goals": {
-                    "for": 4,
-                    "against": 3
-                  }
-                },
-                "update": "2025-09-19T00:00:00+00:00"
-              },
-              {
-                "rank": 13,
+                "rank": 14,
                 "team": {
                   "id": 728,
                   "name": "Rayo Vallecano",
                   "logo": "https://media.api-sports.io/football/teams/728.png"
                 },
-                "points": 4,
+                "points": 5,
                 "goalsDiff": -1,
                 "group": "Primera División",
-                "form": "LDLW",
+                "form": "DLDLW",
                 "status": "same",
                 "all": {
-                  "played": 4,
+                  "played": 5,
                   "win": 1,
-                  "draw": 1,
+                  "draw": 2,
                   "lose": 2,
                   "goals": {
-                    "for": 4,
-                    "against": 5
+                    "for": 5,
+                    "against": 6
                   }
                 },
                 "home": {
-                  "played": 1,
+                  "played": 2,
                   "win": 0,
-                  "draw": 1,
+                  "draw": 2,
                   "lose": 0,
                   "goals": {
-                    "for": 1,
-                    "against": 1
+                    "for": 2,
+                    "against": 2
                   }
                 },
                 "away": {
@@ -591,28 +635,28 @@
                     "against": 4
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 14,
+                "rank": 15,
                 "team": {
                   "id": 538,
                   "name": "Celta Vigo",
                   "logo": "https://media.api-sports.io/football/teams/538.png"
                 },
-                "points": 4,
+                "points": 5,
                 "goalsDiff": -2,
                 "group": "Primera División",
-                "form": "DDDDL",
+                "form": "DDDDD",
                 "status": "same",
                 "all": {
-                  "played": 5,
+                  "played": 6,
                   "win": 0,
-                  "draw": 4,
+                  "draw": 5,
                   "lose": 1,
                   "goals": {
-                    "for": 4,
-                    "against": 6
+                    "for": 5,
+                    "against": 7
                   }
                 },
                 "home": {
@@ -626,81 +670,81 @@
                   }
                 },
                 "away": {
-                  "played": 1,
+                  "played": 2,
                   "win": 0,
-                  "draw": 1,
+                  "draw": 2,
                   "lose": 0,
                   "goals": {
-                    "for": 1,
-                    "against": 1
+                    "for": 2,
+                    "against": 2
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 15,
+                "rank": 16,
                 "team": {
-                  "id": 532,
-                  "name": "Valencia",
-                  "logo": "https://media.api-sports.io/football/teams/532.png"
+                  "id": 539,
+                  "name": "Levante",
+                  "logo": "https://media.api-sports.io/football/teams/539.png"
                 },
                 "points": 4,
-                "goalsDiff": -4,
+                "goalsDiff": 0,
                 "group": "Primera División",
-                "form": "LWLD",
+                "form": "WDLLL",
                 "status": "same",
                 "all": {
-                  "played": 4,
+                  "played": 5,
                   "win": 1,
                   "draw": 1,
-                  "lose": 2,
+                  "lose": 3,
                   "goals": {
-                    "for": 4,
-                    "against": 8
+                    "for": 9,
+                    "against": 9
                   }
                 },
                 "home": {
                   "played": 2,
-                  "win": 1,
+                  "win": 0,
                   "draw": 1,
-                  "lose": 0,
+                  "lose": 1,
                   "goals": {
                     "for": 4,
-                    "against": 1
+                    "against": 5
                   }
                 },
                 "away": {
-                  "played": 2,
-                  "win": 0,
+                  "played": 3,
+                  "win": 1,
                   "draw": 0,
                   "lose": 2,
                   "goals": {
-                    "for": 0,
-                    "against": 7
+                    "for": 5,
+                    "against": 4
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 16,
+                "rank": 17,
                 "team": {
                   "id": 718,
                   "name": "Oviedo",
                   "logo": "https://media.api-sports.io/football/teams/718.png"
                 },
                 "points": 3,
-                "goalsDiff": -6,
+                "goalsDiff": -7,
                 "group": "Primera División",
-                "form": "LWLL",
+                "form": "LLWLL",
                 "status": "same",
                 "all": {
-                  "played": 4,
+                  "played": 5,
                   "win": 1,
                   "draw": 0,
-                  "lose": 3,
+                  "lose": 4,
                   "goals": {
                     "for": 1,
-                    "against": 7
+                    "against": 8
                   }
                 },
                 "home": {
@@ -714,19 +758,19 @@
                   }
                 },
                 "away": {
-                  "played": 2,
+                  "played": 3,
                   "win": 0,
                   "draw": 0,
-                  "lose": 2,
+                  "lose": 3,
                   "goals": {
                     "for": 0,
-                    "against": 4
+                    "against": 5
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
-                "rank": 17,
+                "rank": 18,
                 "team": {
                   "id": 548,
                   "name": "Real Sociedad",
@@ -737,6 +781,7 @@
                 "group": "Primera División",
                 "form": "LLLDD",
                 "status": "same",
+                "description": "Relegation - LaLiga2",
                 "all": {
                   "played": 5,
                   "win": 0,
@@ -767,52 +812,7 @@
                     "against": 5
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
-              },
-              {
-                "rank": 18,
-                "team": {
-                  "id": 539,
-                  "name": "Levante",
-                  "logo": "https://media.api-sports.io/football/teams/539.png"
-                },
-                "points": 1,
-                "goalsDiff": -4,
-                "group": "Primera División",
-                "form": "DLLL",
-                "status": "same",
-                "description": "Relegation - LaLiga2",
-                "all": {
-                  "played": 4,
-                  "win": 0,
-                  "draw": 1,
-                  "lose": 3,
-                  "goals": {
-                    "for": 5,
-                    "against": 9
-                  }
-                },
-                "home": {
-                  "played": 2,
-                  "win": 0,
-                  "draw": 1,
-                  "lose": 1,
-                  "goals": {
-                    "for": 4,
-                    "against": 5
-                  }
-                },
-                "away": {
-                  "played": 2,
-                  "win": 0,
-                  "draw": 0,
-                  "lose": 2,
-                  "goals": {
-                    "for": 1,
-                    "against": 4
-                  }
-                },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
                 "rank": 19,
@@ -821,30 +821,30 @@
                   "name": "Mallorca",
                   "logo": "https://media.api-sports.io/football/teams/798.png"
                 },
-                "points": 1,
+                "points": 2,
                 "goalsDiff": -5,
                 "group": "Primera División",
-                "form": "LLDL",
+                "form": "DLLDL",
                 "status": "same",
                 "description": "Relegation - LaLiga2",
                 "all": {
-                  "played": 4,
+                  "played": 5,
                   "win": 0,
-                  "draw": 1,
+                  "draw": 2,
                   "lose": 3,
                   "goals": {
-                    "for": 4,
-                    "against": 9
+                    "for": 5,
+                    "against": 10
                   }
                 },
                 "home": {
-                  "played": 2,
+                  "played": 3,
                   "win": 0,
-                  "draw": 1,
+                  "draw": 2,
                   "lose": 1,
                   "goals": {
-                    "for": 1,
-                    "against": 4
+                    "for": 2,
+                    "against": 5
                   }
                 },
                 "away": {
@@ -857,7 +857,7 @@
                     "against": 5
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               },
               {
                 "rank": 20,
@@ -867,29 +867,29 @@
                   "logo": "https://media.api-sports.io/football/teams/547.png"
                 },
                 "points": 1,
-                "goalsDiff": -9,
+                "goalsDiff": -13,
                 "group": "Primera División",
-                "form": "DLLL",
+                "form": "LDLLL",
                 "status": "same",
                 "description": "Relegation - LaLiga2",
                 "all": {
-                  "played": 4,
+                  "played": 5,
                   "win": 0,
                   "draw": 1,
-                  "lose": 3,
+                  "lose": 4,
                   "goals": {
                     "for": 2,
-                    "against": 11
+                    "against": 15
                   }
                 },
                 "home": {
-                  "played": 2,
+                  "played": 3,
                   "win": 0,
                   "draw": 0,
-                  "lose": 2,
+                  "lose": 3,
                   "goals": {
                     "for": 1,
-                    "against": 5
+                    "against": 9
                   }
                 },
                 "away": {
@@ -902,7 +902,7 @@
                     "against": 6
                   }
                 },
-                "update": "2025-09-19T00:00:00+00:00"
+                "update": "2025-09-22T00:00:00+00:00"
               }
             ]
           ]
@@ -914,7 +914,7 @@
   },
   "page": "/clasificacion",
   "query": {},
-  "buildId": "W_AolgBls1dFbN6nrO0Dw",
+  "buildId": "_aUecF_etToscet0cDooR",
   "isFallback": false,
   "isExperimentalCompile": false,
   "gsp": true,

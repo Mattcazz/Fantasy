@@ -2,7 +2,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-player_url = "https://app.analiticafantasy.com/api/fantasy-stats/get-fantasy-stats"
+player_url = "https://app.analiticafantasy.com/api/oraculo-fantasy"
 market_url = "https://app.analiticafantasy.com/api/fantasy-players/mercado"
 
 HEADERS = {
@@ -14,20 +14,29 @@ HEADERS = {
                   "(KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"
 }
 
-player_payload = {
-    "league":1, 
-    "position" : 0, 
-    "season" : 2025,
-    "teams": None, 
-    "week": -1 
-}
 
 market_payload = {
     "last":1,"league":2
 }
 
 
-def scrape(url, headers, payload, file_name):        
+def scrape_get(url, headers, file_name):        
+    response = requests.get(url, headers=headers)
+
+    # Comprobar si la respuesta es JSON
+    if response.headers.get("Content-Type", "").startswith("application/json"):
+        data = response.json()
+        # Guardar el archivo completo
+        with open(file_name, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"Archivo '{file_name}' guardado correctamente")
+    else:
+        print("La respuesta no es JSON")
+        print("Status:", response.status_code)
+        print(response.text[:500])
+
+
+def scrape_post(url, headers, payload,file_name):        
     response = requests.post(url, headers=headers, json=payload)
 
     # Comprobar si la respuesta es JSON
@@ -41,6 +50,7 @@ def scrape(url, headers, payload, file_name):
         print("La respuesta no es JSON")
         print("Status:", response.status_code)
         print(response.text[:500])
+
 
 def team_scrape (url, headers, file_name):
     response  = requests.get(url, headers=headers)  
@@ -56,7 +66,9 @@ def team_scrape (url, headers, file_name):
     else:
         print("Element not found")
 
+def web_scrape():
+    scrape_get(player_url, HEADERS, "player.json")
+    team_scrape("https://analiticafantasy.com/clasificacion", HEADERS, "team.json")
 
-scrape(market_url, HEADERS, market_payload, "market.json")
-scrape(player_url, HEADERS, player_payload, "player.json")
-team_scrape("https://analiticafantasy.com/clasificacion", HEADERS, "team.json")
+web_scrape()
+scrape_post(market_url, HEADERS, market_payload, "market.json")
